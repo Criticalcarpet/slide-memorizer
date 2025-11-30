@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./css/nav.css" />
     <link rel="stylesheet" href="./css/main.css" />
     <script src="./js/nav.js" type="module"></script>
+    <link rel="manifest" href="manifest.json">
   </head>
   <body>
     <nav class="navbar" id="navbar">
@@ -61,7 +62,7 @@
 
           <div class="nav-actions">
             <a href="#" class="nav-btn secondary" id="installBtn">Install</a>
-            <a href="#" class="nav-btn primary">Help</a>
+            <a href="./help.html" class="nav-btn primary">Help</a>
           </div>
         </div>
       </div>
@@ -73,7 +74,12 @@
           <h1 class="hero-title">I know why YOU are here</h1>
           <p class="hero-description">I know what kind of man you are</p>
           <div class="hero-buttons">
-            <button class="hero-btn primary" onclick="window.location.href='./learn.html'">Learn</button>
+            <button
+              class="hero-btn primary"
+              onclick="window.location.href='./learn.html'"
+            >
+              Learn
+            </button>
             <button
               class="hero-btn secondary"
               onclick="alert('NO, GO AWAY !!!')"
@@ -121,8 +127,10 @@
               </div>-->
               <h3 class="feature-title">How can I use it ?</h3>
               <p class="feature-text">
-                Click on the "Learn" tab to start learning slides. Use the test
-                tab to test your knowledge.
+                - Click on the "Learn" button to start learning slides. <br />
+                - Cliick on the "Test" button to test your knowledge. (Find it
+                in the nav bar)<br />
+                - Use the "Help" button if you need any assistance.
               </p>
             </div>
 
@@ -140,10 +148,31 @@
                   <path d="M7 11V7a5 5 0 0110 0v4" stroke-width="2" />
                 </svg>
               </div>-->
-              <h3 class="feature-title">What should I do if I am stuck?</h3>
+              <h3 class="feature-title">Need help ?</h3>
               <p class="feature-text">
-                click on "Help" button.<br> FOR THE LOVE OF GOD, U ARE GEH IF U CAN'T
-                FIGURE OUT HOW TO GET HELP
+                - See a blue "Help" button ?<br />
+                - No ? Click on the three horizontals lines and check again.<br />
+                - Yes ? Click on it. <br />
+                P.S. : You are a boomer if you can't find it.
+              </p>
+            </div>
+            <div class="feature-card">
+              <!--<div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10" stroke-width="2" />
+                  <polyline
+                    points="12 6 12 12 16 14"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>-->
+              <h3 class="feature-title">What should I do if I am offline ?</h3>
+              <p class="feature-text">
+                - You can use the app in offline mode too. <br />
+                - Previously viewed slides and images will still be available.<br />
+                - Refresh the page when you have an internet connection to
+                update slides.
               </p>
             </div>
           </div>

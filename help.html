@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Slide Memorizer</title>
     <link rel="stylesheet" href="./css/nav.css" />
-    <link rel="stylesheet" href="./css/test.css" />
-    <link rel="manifest" href="manifest.json">
-
+    <link rel="stylesheet" href="./css/main.css" />
     <script src="./js/nav.js" type="module"></script>
-    <script src="./js/test.js" type="module"></script>
-
+    <script src="./js/help.js" type="module"></script>
+    <link rel="manifest" href="manifest.json" />
   </head>
   <body>
     <nav class="navbar" id="navbar">
@@ -59,24 +57,58 @@
               <a href="./learn.html" class="nav-link">Learn</a>
             </li>
             <li class="nav-item">
-              <a href="./test.html" class="nav-link active">Test</a>
+              <a href="./test.html" class="nav-link">Test</a>
             </li>
           </ul>
 
           <div class="nav-actions">
-            <a href="#"  class="nav-btn secondary" id="installBtn">Install</a>
-            <a href="./help.html" class="nav-btn primary">Help</a>
+            <a href="#" class="nav-btn secondary" id="installBtn">Install</a>
+            <a
+              href="#"
+              class="nav-btn primary"
+              onclick="alert('You are already at the right place. Contact me if u want anymore help boomer')"
+              >Help</a
+            >
           </div>
         </div>
       </div>
     </nav>
+
     <main class="main-content">
-              <section class="hero-section">
-        <div class="hero-container">
-          <h1 class="hero-title">Work in Progress</h1>
-          <p class="hero-description">Please be patient</p>
-        </div>
-      </section>
+      <br /><br />
+      <ul style="margin-left: 10px">
+        <li>
+          <h4>why is the help page not formatted correctly?</h4>
+          <br />
+          - I am lazy to fix it now. Will do it later.
+        </li>
+        <br /><br />
+        <li>
+          <h4>how do I install the app?</h4>
+          <br />
+          - Click on the install button.It's not that hard.
+        </li>
+        <br /><br />
+        <li>
+          <h4>how do I use the app?</h4>
+          <br />
+          - Go to the learn page to start learning slides.<br />
+          - Go to the test page to test your knowledge.
+        </li>
+        <br /><br />
+        <li>
+          <h4>how do I report bugs or suggest features?</h4>
+          <br />
+          - Contact me in college. TALK TO ME
+        </li>
+        <br /><br />
+        <li>
+          <h4>I want to add new slides, how should I do it ?</h4>
+          <br />
+          - Currently, adding new slides is done only by me. Please contact me
+          directly to discuss adding new slides or just WhatsApp me.
+        </li>
+      </ul>
     </main>
   </body>
 </html>
