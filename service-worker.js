@@ -2,10 +2,11 @@
 // Service Worker - Network-First for Everything
 // -----------------------------
 
-const CACHE_NAME = 'slide-memorizer-cache-v5'; // increment version for updates
+const CACHE_NAME = 'slide-memorizer-cache-v6'; // increment version for updates
 const urlsToCache = [
   'index.html',
   'learn.html',
+  'help.html',
   'offline.html',
   'css/learn.css',
   'css/main.css',
