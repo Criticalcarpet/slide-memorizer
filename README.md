@@ -1,1 +1,1 @@
-sure buddy
+To store those images
