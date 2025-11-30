@@ -1,8 +1,8 @@
 // -----------------------------
-// Service Worker for Slide Memorizer
+// Service Worker - Network-First for Everything
 // -----------------------------
 
-const CACHE_NAME = 'slide-memorizer-cache-v3'; // increment for updates
+const CACHE_NAME = 'slide-memorizer-cache-v5'; // increment version for updates
 const urlsToCache = [
   'index.html',
   'learn.html',
@@ -21,7 +21,7 @@ const urlsToCache = [
 self.addEventListener('install', (event) => {
   self.skipWaiting(); // activate new SW immediately
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(urlsToCache))
+    caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache))
   );
 });
 
@@ -30,29 +30,27 @@ self.addEventListener('install', (event) => {
 // -----------------------------
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((keys) =>
+    caches.keys().then(keys =>
       Promise.all(
-        keys.filter((key) => key !== CACHE_NAME)
-            .map((key) => caches.delete(key))
+        keys.filter(key => key !== CACHE_NAME)
+            .map(key => caches.delete(key))
       )
     )
   );
-  self.clients.claim(); // take control immediately
+  self.clients.claim();
 });
 
 // -----------------------------
-// Fetch: network-first with cache fallback
+// Fetch: network-first for everything
 // -----------------------------
 self.addEventListener('fetch', (event) => {
   event.respondWith(
     fetch(event.request)
       .then((response) => {
-        // Only cache successful GET requests
+        // Cache the response if successful GET
         if (response && response.status === 200 && event.request.method === 'GET') {
           const responseClone = response.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, responseClone);
-          });
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, responseClone));
         }
         return response;
       })
@@ -61,7 +59,7 @@ self.addEventListener('fetch', (event) => {
         return caches.match(event.request).then((cachedResponse) => {
           if (cachedResponse) return cachedResponse;
 
-          // Fallback for HTML pages
+          // Offline fallback for HTML pages
           if (event.request.destination === 'document') {
             return caches.match('offline.html');
           }
@@ -69,8 +67,3 @@ self.addEventListener('fetch', (event) => {
       })
   );
 });
-
-// -----------------------------
-// Optional: dynamic caching of GitHub raw images
-// -----------------------------
-// Images from GitHub raw URLs in data.js will be cached on first fetch automatically
