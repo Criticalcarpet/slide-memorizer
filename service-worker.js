@@ -2,7 +2,7 @@
 // Service Worker - Slide Memorizer
 // -----------------------------
 
-const CACHE_NAME = "slide-memorizer-cache-v14";
+const CACHE_NAME = "slide-memorizer-cache-v20";
 
 const CORE_ASSETS = [
   "index.html",
