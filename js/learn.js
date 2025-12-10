@@ -1,4 +1,4 @@
-import { data } from './data.js';
+import { data } from "./data.js";
 
 const featureGrid = document.querySelector(".feature-grid");
 
@@ -15,7 +15,7 @@ async function loadImage(url) {
   } catch (err) {
     const blob = await getImage(url);
     if (blob) return URL.createObjectURL(blob);
-    return 'images/placeholder.png'; // fallback
+    return "images/placeholder.png"; // fallback
   }
 }
 
@@ -134,26 +134,29 @@ function initSlider(slider) {
   setTimeout(reload, 200);
 }
 
-
 // ============================================
-// IMAGE ENLARGER
+// IMAGE ENLARGER (fixed for dynamic images)
 // ============================================
 const imageEnlarger = document.querySelector(".image-enlarger");
 const enlargedImage = document.querySelector(".enlarged-image");
 const closeBtn = document.querySelector(".close-btn");
 
-document.querySelectorAll(".feature-image img").forEach((img) => {
-  img.addEventListener("click", () => {
+// Use event delegation to handle dynamically created images
+document.querySelector(".feature-grid").addEventListener("click", (e) => {
+  const img = e.target.closest(".feature-image img");
+  if (img) {
     enlargedImage.src = img.src;
     imageEnlarger.style.display = "flex";
-  });
+  }
 });
 
+// Close button
 closeBtn.addEventListener("click", () => {
   imageEnlarger.style.display = "none";
   enlargedImage.src = "";
 });
 
+// Click outside image to close
 imageEnlarger.addEventListener("click", (e) => {
   if (e.target === imageEnlarger) {
     imageEnlarger.style.display = "none";
@@ -161,17 +164,16 @@ imageEnlarger.addEventListener("click", (e) => {
   }
 });
 
-
 // -----------------------------
 // IndexedDB helpers
 // -----------------------------
 function openDB() {
   return new Promise((resolve, reject) => {
-    const request = indexedDB.open('SlideMemorizerDB', 1);
-    request.onupgradeneeded = e => {
+    const request = indexedDB.open("SlideMemorizerDB", 1);
+    request.onupgradeneeded = (e) => {
       const db = e.target.result;
-      if (!db.objectStoreNames.contains('images')) {
-        db.createObjectStore('images');
+      if (!db.objectStoreNames.contains("images")) {
+        db.createObjectStore("images");
       }
     };
     request.onsuccess = () => resolve(request.result);
@@ -180,10 +182,10 @@ function openDB() {
 }
 
 function storeImage(key, blob) {
-  return openDB().then(db => {
+  return openDB().then((db) => {
     return new Promise((resolve, reject) => {
-      const tx = db.transaction('images', 'readwrite');
-      tx.objectStore('images').put(blob, key);
+      const tx = db.transaction("images", "readwrite");
+      tx.objectStore("images").put(blob, key);
       tx.oncomplete = () => resolve();
       tx.onerror = () => reject(tx.error);
     });
@@ -191,13 +193,12 @@ function storeImage(key, blob) {
 }
 
 function getImage(key) {
-  return openDB().then(db => {
+  return openDB().then((db) => {
     return new Promise((resolve, reject) => {
-      const tx = db.transaction('images', 'readonly');
-      const request = tx.objectStore('images').get(key);
+      const tx = db.transaction("images", "readonly");
+      const request = tx.objectStore("images").get(key);
       request.onsuccess = () => resolve(request.result);
       request.onerror = () => reject(request.error);
     });
   });
 }
-
