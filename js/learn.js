@@ -1,8 +1,28 @@
-import { data } from "./data.js";
+import { data } from './data.js';
 
 const featureGrid = document.querySelector(".feature-grid");
 
-data.slides.forEach((slide) => {
+// -----------------------------
+// Load image - network first, fallback to IndexedDB
+// -----------------------------
+async function loadImage(url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error("Network fetch failed");
+    const blob = await response.blob();
+    await storeImage(url, blob); // store in IndexedDB
+    return URL.createObjectURL(blob);
+  } catch (err) {
+    const blob = await getImage(url);
+    if (blob) return URL.createObjectURL(blob);
+    return 'images/placeholder.png'; // fallback
+  }
+}
+
+// -----------------------------
+// Render slides
+// -----------------------------
+data.slides.forEach(async (slide) => {
   const featureCard = document.createElement("div");
   featureCard.classList.add("feature-card");
 
@@ -15,26 +35,21 @@ data.slides.forEach((slide) => {
   const list = document.createElement("div");
   list.classList.add("list");
 
-  // -----------------------------
-  // ADD IMAGES
-  // -----------------------------
-  slide.image.forEach((image) => {
+  for (const url of slide.image) {
     const item = document.createElement("div");
     item.classList.add("item");
 
     const img = document.createElement("img");
-    img.src = image;
     img.alt = "Slide image";
+    img.src = await loadImage(url);
 
     item.appendChild(img);
     list.appendChild(item);
-  });
+  }
 
   slider.appendChild(list);
 
-  // -----------------------------
-  // BUTTONS
-  // -----------------------------
+  // Buttons
   const buttons = document.createElement("div");
   buttons.classList.add("buttons");
 
@@ -50,33 +65,23 @@ data.slides.forEach((slide) => {
   buttons.appendChild(next);
   slider.appendChild(buttons);
 
-  // -----------------------------
-  // DOTS
-  // -----------------------------
+  // Dots
   const dots = document.createElement("ul");
   dots.classList.add("dots");
-
   slide.image.forEach((_, index) => {
     const dot = document.createElement("li");
     if (index === 0) dot.classList.add("active");
     dots.appendChild(dot);
   });
-
   slider.appendChild(dots);
 
   featureImage.appendChild(slider);
 
-  // -----------------------------
-  // HIDE ARROWS & DOTS IF ONLY ONE IMAGE
-  // -----------------------------
   if (slide.image.length <= 1) {
     buttons.style.display = "none";
     dots.style.display = "none";
   }
 
-  // -----------------------------
-  // TITLE
-  // -----------------------------
   const title = document.createElement("h3");
   title.classList.add("feature-title");
   title.textContent = slide.name;
@@ -85,17 +90,12 @@ data.slides.forEach((slide) => {
   featureCard.appendChild(title);
   featureGrid.appendChild(featureCard);
 
-  // -----------------------------
-  // INIT SLIDER ONLY IF >1 IMAGE
-  // -----------------------------
-  if (slide.image.length > 1) {
-    initSlider(slider);
-  }
+  if (slide.image.length > 1) initSlider(slider);
 });
 
-// ============================================
-// SLIDER FUNCTION
-// ============================================
+// -----------------------------
+// Slider function
+// -----------------------------
 function initSlider(slider) {
   const list = slider.querySelector(".list");
   const items = Array.from(slider.querySelectorAll(".item"));
@@ -109,25 +109,20 @@ function initSlider(slider) {
   function reload() {
     const left = items[active].offsetLeft;
     list.style.left = -left + "px";
-
-    // Update dots
     slider.querySelector(".dots li.active")?.classList.remove("active");
     dots[active].classList.add("active");
   }
 
-  // Next
   next.addEventListener("click", () => {
     active = active >= max ? 0 : active + 1;
     reload();
   });
 
-  // Prev
   prev.addEventListener("click", () => {
     active = active <= 0 ? max : active - 1;
     reload();
   });
 
-  // Dot click
   dots.forEach((dot, index) => {
     dot.addEventListener("click", () => {
       active = index;
@@ -135,10 +130,10 @@ function initSlider(slider) {
     });
   });
 
-  // Fix initial left position after images load
   window.addEventListener("resize", reload);
   setTimeout(reload, 200);
 }
+
 
 // ============================================
 // IMAGE ENLARGER
@@ -165,3 +160,44 @@ imageEnlarger.addEventListener("click", (e) => {
     enlargedImage.src = "";
   }
 });
+
+
+// -----------------------------
+// IndexedDB helpers
+// -----------------------------
+function openDB() {
+  return new Promise((resolve, reject) => {
+    const request = indexedDB.open('SlideMemorizerDB', 1);
+    request.onupgradeneeded = e => {
+      const db = e.target.result;
+      if (!db.objectStoreNames.contains('images')) {
+        db.createObjectStore('images');
+      }
+    };
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => reject(request.error);
+  });
+}
+
+function storeImage(key, blob) {
+  return openDB().then(db => {
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction('images', 'readwrite');
+      tx.objectStore('images').put(blob, key);
+      tx.oncomplete = () => resolve();
+      tx.onerror = () => reject(tx.error);
+    });
+  });
+}
+
+function getImage(key) {
+  return openDB().then(db => {
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction('images', 'readonly');
+      const request = tx.objectStore('images').get(key);
+      request.onsuccess = () => resolve(request.result);
+      request.onerror = () => reject(request.error);
+    });
+  });
+}
+
