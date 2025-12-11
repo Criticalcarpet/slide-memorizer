@@ -95,3 +95,52 @@ if (window.matchMedia("(display-mode: standalone)").matches) {
   console.log("App is running in standalone mode");
   installBtn.style.display = "none";
 }
+
+
+// Offline CHEKCER
+
+window.addEventListener("load", () => {
+  const statusIndicator = document.getElementById("statusIndicator");
+
+  async function realOnlineCheck() {
+    const start = performance.now();
+
+    try {
+      // Try connecting to a guaranteed invalid domain
+      // SW cannot intercept external domains
+      await fetch("https://definitely-not-a-real-domain-1234.com/ping.txt?" + Date.now(), {
+        method: "HEAD",
+        mode: "no-cors",
+        cache: "no-store"
+      });
+
+      const elapsed = performance.now() - start;
+
+      // DevTools offline returns *instantly* (< 20ms)
+      if (elapsed < 20) {
+        return false;
+      }
+
+      return true; // Online
+    } catch (err) {
+      // Any DNS or network failure = offline
+      return false;
+    }
+  }
+
+  async function updateStatus() {
+    const online = await realOnlineCheck();
+    const status = online ? "online" : "offline";
+    console.log("Real network:", status);
+
+    if (statusIndicator) {
+      statusIndicator.textContent = `Status: ${status}`;
+      statusIndicator.style.color = online ? "green" : "red";
+    }
+  }
+
+  window.addEventListener("online", updateStatus);
+  window.addEventListener("offline", updateStatus);
+
+  updateStatus();
+});

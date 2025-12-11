@@ -1,4 +1,4 @@
-const CACHE_NAME = "slide-mem-cache-v9"; // bumped
+const CACHE_NAME = "slide-mem-cache-v1.1.0"; // bumped
 
 const CORE_ASSETS = [
   "index.html",

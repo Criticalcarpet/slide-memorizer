@@ -235,3 +235,37 @@
     gap: 20px;
   }
 }
+
+#statusIndicator {
+  position: fixed;
+  top: var(--nav-height);
+  right: 16px;
+  background-color: var(--background-alt);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 1001;
+}
+#offlineStatus {
+  display: none;
+  color: red;
+}
+#onlineStatus {
+  display: none;
+  color: green;
+} 
+#statusIndicator.offline #offlineStatus {
+  display: inline;
+}
+#statusIndicator.offline #onlineStatus {
+  display: none;
+}
+#statusIndicator.online #onlineStatus {
+  display: inline;
+}
+#statusIndicator.online #offlineStatus {
+  display: none;
+} 
