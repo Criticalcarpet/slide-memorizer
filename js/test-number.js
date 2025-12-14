@@ -1,85 +1,162 @@
 import { data } from "./data.js";
 
-/* -----------------------------
-   Helpers
------------------------------ */
-
+// -----------------------------
+// Utility: shuffle array
+// -----------------------------
 function shuffle(array) {
-  return [...array].sort(() => Math.random() - 0.5);
+  return array
+    .map(value => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value);
 }
 
-function extractNumber(slideName) {
-  // "07 - Lobar Pneumonia" → "07"
-  return slideName.split(" - ")[0];
+// -----------------------------
+// Extract slide number
+// -----------------------------
+function getSlideNumber(name) {
+  return name.split(" - ")[0].trim();
 }
 
-/* -----------------------------
-   Question generation
------------------------------ */
+// -----------------------------
+// Build question pool
+// -----------------------------
+function generateQuestions(slides) {
+  const questions = [];
 
-const container = document.getElementById("questionContainer");
-const slides = shuffle(data.slides); // no repeats, all slides
+  slides.forEach(slide => {
+    const slideNumber = getSlideNumber(slide.name);
 
-slides.forEach((slide, index) => {
-  const correctNumber = extractNumber(slide.name);
+    slide.image.forEach(imageUrl => {
+      questions.push({
+        image: imageUrl,
+        correctAnswer: slideNumber
+      });
+    });
+  });
 
-  // get wrong options (numbers from other slides)
-  const wrongOptions = shuffle(
-    data.slides
-      .filter((s) => s.id !== slide.id)
-      .map((s) => extractNumber(s.name))
-  ).slice(0, 3);
+  return questions;
+}
 
-  const options = shuffle([correctNumber, ...wrongOptions]);
+// -----------------------------
+// Generate NUMBER options
+// -----------------------------
+function generateOptions(correctAnswer, allSlides) {
+  const allNumbers = allSlides.map(s => getSlideNumber(s.name));
+  const wrong = allNumbers.filter(n => n !== correctAnswer);
 
-  // random image from slide
-  const imageUrl = slide.image[Math.floor(Math.random() * slide.image.length)];
+  const options = shuffle(wrong).slice(0, 3);
+  options.push(correctAnswer);
 
-  // ---- DOM ----
-  const qDiv = document.createElement("div");
-  qDiv.className = "question";
+  return shuffle(options);
+}
 
-  qDiv.innerHTML = `
-    <p><strong>Q${index + 1}. Identify the slide number</strong></p>
-    <img src="${imageUrl}" alt="Slide image" style="max-width:100%; height:auto;" />
-
-    ${options
-      .map(
-        (opt) => `
-      <label>
-        <input type="radio" name="q${index}" value="${opt}" />
-        ${opt}
-      </label>
-      <br/>
-    `
-      )
-      .join("")}
-  `;
-
-  // store correct answer
-  qDiv.dataset.correct = correctNumber;
-
-  container.appendChild(qDiv);
-});
-
-/* -----------------------------
-   Submit + scoring
------------------------------ */
-
-document.getElementById("testForm").addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  let score = 0;
-  const questions = document.querySelectorAll(".question");
+// -----------------------------
+// Render test
+// -----------------------------
+function renderTest(questions) {
+  const container = document.querySelector(".test-container");
+  container.innerHTML = "";
 
   questions.forEach((q, index) => {
-    const selected = q.querySelector(`input[name="q${index}"]:checked`);
-    if (selected && selected.value === q.dataset.correct) {
+    const card = document.createElement("div");
+    card.className = "question-card";
+    card.dataset.correct = q.correctAnswer;
+
+    const questionText = document.createElement("h3");
+    questionText.textContent = `Q${index + 1}. Identify the slide`;
+
+    const img = document.createElement("img");
+    img.src = q.image;
+    img.alt = "Slide image";
+
+    const options = generateOptions(q.correctAnswer, data.slides);
+    const optionsContainer = document.createElement("div");
+    optionsContainer.className = "options";
+
+    options.forEach(option => {
+      const label = document.createElement("label");
+      label.className = "option";
+
+      const input = document.createElement("input");
+      input.type = "radio";
+      input.name = `question-${index}`;
+      input.value = option;
+
+      const span = document.createElement("span");
+      span.textContent = option;
+
+      label.appendChild(input);
+      label.appendChild(span);
+      optionsContainer.appendChild(label);
+    });
+
+    card.appendChild(questionText);
+    card.appendChild(img);
+    card.appendChild(optionsContainer);
+    container.appendChild(card);
+  });
+}
+
+// -----------------------------
+// Scoring logic
+// -----------------------------
+function calculateScore() {
+  const cards = document.querySelectorAll(".question-card");
+  let score = 0;
+
+  cards.forEach(card => {
+    const correct = card.dataset.correct;
+    const selected = card.querySelector("input:checked");
+
+    const options = card.querySelectorAll(".option");
+
+    options.forEach(opt => {
+      const input = opt.querySelector("input");
+
+      if (input.value === correct) {
+        opt.classList.add("correct");
+      }
+
+      if (selected && input === selected && input.value !== correct) {
+        opt.classList.add("wrong");
+      }
+
+      input.disabled = true;
+    });
+
+    if (selected && selected.value === correct) {
       score++;
     }
   });
 
-  document.getElementById(
-    "result"
-  ).textContent = `Score: ${score} / ${questions.length}`;
+  showScore(score, cards.length);
+}
+
+// -----------------------------
+// Show score summary
+// -----------------------------
+function showScore(score, total) {
+  const footer = document.querySelector(".test-footer");
+
+  const result = document.createElement("div");
+  result.className = "score-summary";
+  result.textContent = `Score: ${score} / ${total}`;
+
+  footer.prepend(result);
+}
+
+// -----------------------------
+// Init
+// -----------------------------
+const questions = generateQuestions(data.slides);
+renderTest(questions);
+
+// -----------------------------
+// Submit handler
+// -----------------------------
+document.getElementById("submitTest").addEventListener("click", (e) => {
+  e.preventDefault();
+  e.target.disabled = true;
+  e.target.style.display = "none";
+  calculateScore();
 });
