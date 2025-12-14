@@ -33,7 +33,7 @@ export const data = {
     },
     {
       id: 5,
-      name: " - Myocardial Infarction",
+      name: "No number - Myocardial Infarction",
       image: [
         "https://raw.githubusercontent.com/Criticalcarpet/slide-memorizer/refs/heads/image-store/myocardial_infarction.png"
       ],
