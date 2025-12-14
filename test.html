@@ -15,11 +15,6 @@
 
     <script src="./js/nav.js" type="module"></script>
     <script src="./js/test.js" type="module"></script>
-
-    <meta
-      http-equiv="refresh"
-      content="0; url=https://criticalcarpet.github.io/slide-memorizer/test-number.html"
-    />
   </head>
   <body>
     <nav class="navbar" id="navbar">
@@ -62,19 +57,19 @@
         <div class="nav-menu" id="navMenu">
           <ul class="nav-list">
             <li class="nav-item">
-              <a href="./index.html" class="nav-link">Home</a>
+              <a href="#" class="nav-link active">Home</a>
             </li>
             <li class="nav-item">
               <a href="./learn.html" class="nav-link">Learn</a>
             </li>
             <li class="nav-item">
-              <a href="./test.html" class="nav-link active">Test</a>
+              <a href="./test.html" class="nav-link">Test</a>
             </li>
           </ul>
 
           <div class="nav-actions">
             <a href="#" class="nav-btn secondary" id="installBtn">Install</a>
-            <a href="./help.html" class="nav-btn primary">Help</a>
+            <a href="./help.html" class="nav-btn secondary">Help</a>
           </div>
         </div>
       </div>
@@ -82,9 +77,57 @@
     <main class="main-content">
       <section class="hero-section">
         <div class="hero-container">
-          <h1 class="hero-title">Work in Progress</h1>
-          <p class="hero-description">Please be patient</p>
+          <h1 class="hero-title">Test Your Knowledge</h1>
+          <p class="hero-subtitle">
+            Challenge yourself with our interactive slide memorization tests.
+          </p>
         </div>
+        <!-- Cards for two tests -->
+        <section class="content-section">
+          <div class="content-container">
+            <div class="feature-grid">
+              <div class="feature-card" id="numberTest">
+                <!--<div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path
+                    d="M12 2L2 7L12 12L22 7L12 2Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M2 17L12 22L22 17"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>-->
+                <h3 class="feature-title">Slide Number Test</h3>
+                <p class="feature-text">
+                  Click for a test based on the number on the slide
+                </p>
+              </div>
+
+              <div class="feature-card" id="nameTest">
+                <!--<div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10" stroke-width="2" />
+                  <polyline
+                    points="12 6 12 12 16 14"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>-->
+                <h3 class="feature-title">Slide Name Test</h3>
+                <p class="feature-text">
+                  Click for a test based on the name or diagnosis of the slide
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
       </section>
     </main>
   </body>
