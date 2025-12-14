@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Slide Memorizer — Test</title>
+
+    <!-- Test-specific CSS -->
+    <link rel="stylesheet" href="./css/test-name.css" />
+    <link rel="stylesheet" href="./css/nav.css" />
+
+    <script type="module" src="./js/nav.js"></script>
+    <script type="module" src="./js/test-name.js"></script>
+
+    <!-- PWA basics (optional but safe to keep) -->
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="/index.html" class="nav-logo">
+          <svg
+            class="logo-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
+            <polygon
+              points="12 2 2 7 12 12 22 7 12 2"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <polyline
+              points="2 17 12 22 22 17"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <polyline
+              points="2 12 12 17 22 12"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <span class="logo-text">Slide Memorizer</span>
+        </a>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <div class="nav-menu" id="navMenu">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="./index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="./learn.html" class="nav-link">Learn</a>
+            </li>
+            <li class="nav-item">
+              <a href="./test.html" class="nav-link active">Test</a>
+            </li>
+          </ul>
+
+          <div class="nav-actions">
+            <a href="#" class="nav-btn secondary" id="installBtn">Install</a>
+            <a href="./help.html" class="nav-btn secondary">Help</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div id="statusIndicator">
+      <span id="offlineStatus">Offline</span>
+      <span id="onlineStatus">Online</span>
+    </div>
+    <!-- =============================
+       HEADER
+  ============================== -->
+    <header class="test-header">
+      <h1>Slide Identification Test</h1>
+      <p>Identify the slide shown below</p>
+    </header>
+
+    <!-- =============================
+       TEST CONTAINER
+  ============================== -->
+    <main class="test-container">
+      <!-- Questions injected by JS -->
+    </main>
+
+    <!-- =============================
+       FOOTER ACTIONS
+  ============================== -->
+    <footer class="test-footer">
+      <button id="submitTest">Submit Test</button>
+    </footer>
+  </body>
+</html>
