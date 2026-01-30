@@ -13,6 +13,8 @@ export const data = {
       image: [
         "https://raw.githubusercontent.com/Criticalcarpet/Slide-memorizer/refs/heads/image-store/acute_appendicitis-1.png",
         "https://raw.githubusercontent.com/Criticalcarpet/Slide-memorizer/refs/heads/image-store/acute_appendicitis-2.png",
+        "https://raw.githubusercontent.com/Criticalcarpet/Slide-memorizer/refs/heads/image-store/acute_appendicitis-3.png",
+        "https://raw.githubusercontent.com/Criticalcarpet/Slide-memorizer/refs/heads/image-store/acute_appendicitis-4.png"
       ],
     },
     {
@@ -58,6 +60,21 @@ export const data = {
       name: "18 - Adenocarcinoma of the Intestine",
       image: [
         "https://raw.githubusercontent.com/Criticalcarpet/slide-memorizer/refs/heads/image-store/adenocarcinoma_intestine.png"
+      ],
+    },
+    {
+      id: 9,
+      name: "45 - NNBP",
+      image: [
+        "https://raw.githubusercontent.com/Criticalcarpet/slide-memorizer/refs/heads/image-store/nnbp-1.png",
+        "https://raw.githubusercontent.com/Criticalcarpet/slide-memorizer/refs/heads/image-store/nnbp-2.png"
+      ],
+    },
+    {
+      id: 10,
+      name: "47 - Microcytic Anemia",
+      image: [
+        "https://raw.githubusercontent.com/Criticalcarpet/slide-memorizer/refs/heads/image-store/microcytic_anemia.png"
       ],
     }
   ],
