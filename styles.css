@@ -20,7 +20,6 @@
 html,
 body {
   min-height: 100%;
-  overflow-x: hidden;
 }
 
 body {
@@ -170,7 +169,10 @@ main {
 
   border: 1px solid var(--border);
   border-radius: 16px;
-
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1rem; /* Gives it a nice breathing room at the top */
+  z-index: 100; /* Keeps it above the moving slides */
   margin-bottom: 1rem;
 }
 

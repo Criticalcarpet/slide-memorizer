@@ -11,6 +11,7 @@
     />
     <script type="module" src="script.js"></script>
     <script type="module" src="slide.js"></script>
+    <script type="module" src="search.js"></script>
   </head>
 
   <body>
@@ -28,14 +29,15 @@
       </ul>
     </nav>
     <main>
+      <div id="search-bar">
+        <i id="search-icon" class="ti ti-search"></i
+        ><input
+          type="text"
+          placeholder="Search number or name of the slide"
+          id="search-input"
+        />
+      </div>
       <section class="fixed">
-        <div id="search-bar">
-          <i id="search-icon" class="ti ti-search"></i
-          ><input
-            type="text"
-            placeholder="Search title, number, notes or topic..."
-          />
-        </div>
         <div class="dropdown">
           <button id="dropBtn">Select Subject ▾</button>
           <div id="dropContent" class="dropdown-content hidden">
@@ -50,12 +52,12 @@
           <button>Reveal Recall</button> <button>Test Match</button>
         </div>
       </section>
-      <div class="ribbon-bar">
+      <!--<div class="ribbon-bar">
         <div class="ribbon-item">All</div>
         <div class="ribbon-item">Bookmarked</div>
         <div class="ribbon-item">Learning</div>
         <div class="ribbon-item">Mastered</div>
-      </div>
+      </div>-->
       <section id="moving-slides"></section>
     </main>
   </body>

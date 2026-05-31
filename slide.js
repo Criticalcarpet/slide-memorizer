@@ -18,7 +18,6 @@ const slideContainer = document.getElementById('moving-slides')
           </div>
  */
 slideList.forEach((e) => {
-  console.log(e)
   let template = `          <div class="slides">
             <!--<div class="slide-number">${e.number}</div>-->
             <div class="ribbon-slide-marker">

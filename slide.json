@@ -61,11 +61,11 @@
   },
   {
     "number": "16",
-    "name": "SCC"
+    "name": "SCC (Squamous Cell Carcinoma)"
   },
   {
     "number": "17",
-    "name": "BCC"
+    "name": "BCC (Basal Cell Carcinoma)"
   },
   {
     "number": "18",
@@ -97,7 +97,7 @@
   },
   {
     "number": "25",
-    "name": "RCC"
+    "name": "RCC (Renal Cell Carcinoma)"
   },
   {
     "number": "26",
@@ -165,10 +165,10 @@
   },
   {
     "number": "49",
-    "name": "CLL"
+    "name": "CLL (Chronic Lymphoid Leukemia)"
   },
   {
     "number": "50",
-    "name": "CML"
+    "name": "CML (Chronic Myeloid Leukemia)"
   }
 ]
