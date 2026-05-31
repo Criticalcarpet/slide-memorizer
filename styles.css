@@ -449,6 +449,7 @@ main {
 .slide-image {
   position: relative; 
   width: 100%;
+  aspect-ratio: 1/1;
   display: flex;
   justify-content: center;
   align-items: center;
