@@ -1,0 +1,174 @@
+[
+  {
+    "number": "01",
+    "name": "Fatty Liver"
+  },
+  {
+    "number": "02",
+    "name": "Monckeberg Medial Sclerosis"
+  },
+  {
+    "number": "03",
+    "name": "Hyaline Degeneration (Leiomyoma)"
+  },
+  {
+    "number": "04",
+    "name": "Coagulative Necrosis"
+  },
+  {
+    "number": "05",
+    "name": "Caseous Necrosis"
+  },
+  {
+    "number": "06",
+    "name": "Acute Appendicitis"
+  },
+  {
+    "number": "07",
+    "name": "Lobar Pneumonia"
+  },
+  {
+    "number": "08",
+    "name": "Granulation Tissue"
+  },
+  {
+    "number": "09",
+    "name": "TB Lymph Node"
+  },
+  {
+    "number": "10",
+    "name": "Actinomycosis"
+  },
+  {
+    "number": "11",
+    "name": "Rhinosporidiosis"
+  },
+  {
+    "number": "12",
+    "name": "CVC Lung"
+  },
+  {
+    "number": "13",
+    "name": "Lipoma"
+  },
+  {
+    "number": "14",
+    "name": "Cavernous Hemangioma"
+  },
+  {
+    "number": "15",
+    "name": "Schwannoma"
+  },
+  {
+    "number": "16",
+    "name": "SCC"
+  },
+  {
+    "number": "17",
+    "name": "BCC"
+  },
+  {
+    "number": "18",
+    "name": "Adenocarcinoma Colon"
+  },
+  {
+    "number": "19",
+    "name": "Hodgkin's Lymphoma"
+  },
+  {
+    "number": "20",
+    "name": "Pleomorphic Adenoma"
+  },
+  {
+    "number": "21",
+    "name": "Cirrhosis of Liver"
+  },
+  {
+    "number": "22",
+    "name": "Chronic Cholecystitis"
+  },
+  {
+    "number": "23",
+    "name": "Atheroscelrosis"
+  },
+  {
+    "number": "24",
+    "name": "Chronic Pyelonephritis"
+  },
+  {
+    "number": "25",
+    "name": "RCC"
+  },
+  {
+    "number": "26",
+    "name": "Seminoma"
+  },
+  {
+    "number": "27",
+    "name": "Benign Prostatic Hyperplasia"
+  },
+  {
+    "number": "28",
+    "name": "Leiomyoma"
+  },
+  {
+    "number": "29",
+    "name": "Serous Cyst"
+  },
+  {
+    "number": "30",
+    "name": "Mucinous Cystadenoma"
+  },
+  {
+    "number": "31",
+    "name": "Fibroadenoma"
+  },
+  {
+    "number": "32",
+    "name": "Osteoclastoma"
+  },
+  {
+    "number": "33",
+    "name": "Multinodular Goitre"
+  },
+  {
+    "number": "34",
+    "name": "Hashimoto's Thyroiditis"
+  },
+  {
+    "number": "35",
+    "name": "Papillary Carcinoma Thyroid"
+  },
+  {
+    "number": "36",
+    "name": "Hyadatidiform Mole"
+  },
+  {
+    "number": "37",
+    "name": "Cappilary Hemangioma"
+  },
+  {
+    "number": "45",
+    "name": "Normocytic Normochromic Blood Picture"
+  },
+  {
+    "number": "46",
+    "name": "Eosinophilia"
+  },
+  {
+    "number": "47",
+    "name": "Microcytic Hypochromic Anemia"
+  },
+  {
+    "number": "48",
+    "name": "Dimorphic Anemia"
+  },
+  {
+    "number": "49",
+    "name": "CLL"
+  },
+  {
+    "number": "50",
+    "name": "CML"
+  }
+]
