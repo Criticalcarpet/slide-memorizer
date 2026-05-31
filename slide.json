@@ -1,174 +1,310 @@
 [
   {
     "number": "01",
-    "name": "Fatty Liver"
+    "name": "Fatty Liver",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "02",
-    "name": "Monckeberg Medial Sclerosis"
+    "name": "Monckeberg Medial Sclerosis",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "03",
-    "name": "Hyaline Degeneration (Leiomyoma)"
+    "name": "Hyaline Degeneration (Leiomyoma)",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "04",
-    "name": "Coagulative Necrosis"
+    "name": "Coagulative Necrosis",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "05",
-    "name": "Caseous Necrosis"
+    "name": "Caseous Necrosis",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "06",
-    "name": "Acute Appendicitis"
+    "name": "Acute Appendicitis",
+    "src": [
+      "https://raw.githubusercontent.com/Criticalcarpet/slide-memorizer/refs/heads/image-store/slides/6-1.png",
+      "https://raw.githubusercontent.com/Criticalcarpet/slide-memorizer/refs/heads/image-store/slides/6-2.png",
+      "https://raw.githubusercontent.com/Criticalcarpet/slide-memorizer/refs/heads/image-store/slides/6-3.png",
+      "https://raw.githubusercontent.com/Criticalcarpet/slide-memorizer/refs/heads/image-store/slides/6-4.png"
+    ]
   },
   {
     "number": "07",
-    "name": "Lobar Pneumonia"
+    "name": "Lobar Pneumonia",
+    "src": [
+      "https://raw.githubusercontent.com/Criticalcarpet/slide-memorizer/refs/heads/image-store/slides/7.png"
+    ]
   },
   {
     "number": "08",
-    "name": "Granulation Tissue"
+    "name": "Granulation Tissue",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "09",
-    "name": "TB Lymph Node"
+    "name": "TB Lymph Node",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "10",
-    "name": "Actinomycosis"
+    "name": "Actinomycosis",
+    "src": [
+      "https://raw.githubusercontent.com/Criticalcarpet/slide-memorizer/refs/heads/image-store/slides/10-1.png",
+      "https://raw.githubusercontent.com/Criticalcarpet/slide-memorizer/refs/heads/image-store/slides/10-2.png"
+    ]
   },
   {
     "number": "11",
-    "name": "Rhinosporidiosis"
+    "name": "Rhinosporidiosis",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "12",
-    "name": "CVC Lung"
+    "name": "CVC Lung",
+    "src": [
+      "https://raw.githubusercontent.com/Criticalcarpet/slide-memorizer/refs/heads/image-store/slides/12-1.png",
+      "https://raw.githubusercontent.com/Criticalcarpet/slide-memorizer/refs/heads/image-store/slides/12-2.png"
+    ]
   },
   {
     "number": "13",
-    "name": "Lipoma"
+    "name": "Lipoma",
+    "src": [
+      "https://raw.githubusercontent.com/Criticalcarpet/slide-memorizer/refs/heads/image-store/slides/13.png"
+    ]
   },
   {
     "number": "14",
-    "name": "Cavernous Hemangioma"
+    "name": "Cavernous Hemangioma",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "15",
-    "name": "Schwannoma"
+    "name": "Schwannoma",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "16",
-    "name": "SCC (Squamous Cell Carcinoma)"
+    "name": "SCC (Squamous Cell Carcinoma)",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "17",
-    "name": "BCC (Basal Cell Carcinoma)"
+    "name": "BCC (Basal Cell Carcinoma)",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "18",
-    "name": "Adenocarcinoma Colon"
+    "name": "Adenocarcinoma Colon",
+    "src": [
+      "https://raw.githubusercontent.com/Criticalcarpet/slide-memorizer/refs/heads/image-store/slides/18.png"
+    ]
   },
   {
     "number": "19",
-    "name": "Hodgkin's Lymphoma"
+    "name": "Hodgkin's Lymphoma",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "20",
-    "name": "Pleomorphic Adenoma"
+    "name": "Pleomorphic Adenoma",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "21",
-    "name": "Cirrhosis of Liver"
+    "name": "Cirrhosis of Liver",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "22",
-    "name": "Chronic Cholecystitis"
+    "name": "Chronic Cholecystitis",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "23",
-    "name": "Atheroscelrosis"
+    "name": "Atheroscelrosis",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "24",
-    "name": "Chronic Pyelonephritis"
+    "name": "Chronic Pyelonephritis",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "25",
-    "name": "RCC (Renal Cell Carcinoma)"
+    "name": "RCC (Renal Cell Carcinoma)",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "26",
-    "name": "Seminoma"
+    "name": "Seminoma",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "27",
-    "name": "Benign Prostatic Hyperplasia"
+    "name": "Benign Prostatic Hyperplasia",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "28",
-    "name": "Leiomyoma"
+    "name": "Leiomyoma",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "29",
-    "name": "Serous Cyst"
+    "name": "Serous Cyst",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "30",
-    "name": "Mucinous Cystadenoma"
+    "name": "Mucinous Cystadenoma",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "31",
-    "name": "Fibroadenoma"
+    "name": "Fibroadenoma",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "32",
-    "name": "Osteoclastoma"
+    "name": "Osteoclastoma",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "33",
-    "name": "Multinodular Goitre"
+    "name": "Multinodular Goitre",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "34",
-    "name": "Hashimoto's Thyroiditis"
+    "name": "Hashimoto's Thyroiditis",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "35",
-    "name": "Papillary Carcinoma Thyroid"
+    "name": "Papillary Carcinoma Thyroid",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "36",
-    "name": "Hyadatidiform Mole"
+    "name": "Hyadatidiform Mole",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "37",
-    "name": "Cappilary Hemangioma"
+    "name": "Cappilary Hemangioma",
+    "src": [
+      "https://raw.githubusercontent.com/Criticalcarpet/slide-memorizer/refs/heads/image-store/slides/37-1.png",
+      "https://raw.githubusercontent.com/Criticalcarpet/slide-memorizer/refs/heads/image-store/slides/37-2.png"
+    ]
   },
   {
     "number": "45",
-    "name": "Normocytic Normochromic Blood Picture"
+    "name": "Normocytic Normochromic Blood Picture",
+    "src": [
+      "https://raw.githubusercontent.com/Criticalcarpet/slide-memorizer/refs/heads/image-store/slides/45-1.png",
+      "https://raw.githubusercontent.com/Criticalcarpet/slide-memorizer/refs/heads/image-store/slides/45-2.png"
+    ]
   },
   {
     "number": "46",
-    "name": "Eosinophilia"
+    "name": "Eosinophilia",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "47",
-    "name": "Microcytic Hypochromic Anemia"
+    "name": "Microcytic Hypochromic Anemia",
+    "src": [
+      "https://raw.githubusercontent.com/Criticalcarpet/slide-memorizer/refs/heads/image-store/slides/47.png"
+    ]
   },
   {
     "number": "48",
-    "name": "Dimorphic Anemia"
+    "name": "Dimorphic Anemia",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "49",
-    "name": "CLL (Chronic Lymphoid Leukemia)"
+    "name": "CLL (Chronic Lymphoid Leukemia)",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   },
   {
     "number": "50",
-    "name": "CML (Chronic Myeloid Leukemia)"
+    "name": "CML (Chronic Myeloid Leukemia)",
+    "src": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+    ]
   }
 ]

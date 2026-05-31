@@ -22,7 +22,7 @@ inputItem.addEventListener('keydown', (e) => {
             </div>
             <div class="slide-image">
               <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-6xXO7DsQ747UNVIJvDGOjgLu_w0G5mOPXg&s"
+                src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
               />
             </div>
             <span class="slide-name">${element.item.number}. ${element.item.name}</span>

@@ -447,12 +447,14 @@ main {
 }
 
 .slide-image {
+  position: relative; 
   width: 100%;
-
   display: flex;
   justify-content: center;
-
+  align-items: center;
   margin-bottom: 0.75rem;
+  border-radius: 8px;
+  overflow: hidden; /* Keeps the buttons inside the rounded corners */
 }
 
 .slide-image img {
@@ -468,7 +470,58 @@ main {
   font-size: 1rem;
   font-weight: 600;
 }
+/* The styling for the next/prev buttons */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  background: rgba(15, 21, 40, 0.7); /* Matches your dark theme */
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  
+  cursor: pointer;
+  transition: 0.2s ease;
+  z-index: 10;
+}
 
+.slider-btn:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.prev-btn { left: 8px; }
+.next-btn { right: 8px; }
+
+.slider-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4); 
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.dot.active {
+  background: #ffffff;
+  transform: scale(1.25);
+}
 /* =========================
 Gross Slides
 ========================= */
